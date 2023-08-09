@@ -25,6 +25,7 @@
             background-color: #3498db;
             color: white;
             cursor: pointer;
+             animation: animateButton 2s infinite;
          }
          #catContainer {
             display: none;
@@ -137,6 +138,44 @@
                transform: translateY(100%);
             }
          }
+          @keyframes animateButton {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+ @keyframes animate {
+    0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px);
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #232323;
+    width: 0px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    width: 0px;
+  }
       </style>
       <title>NSFW :3</title>
    </head>
