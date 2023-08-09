@@ -1,111 +1,150 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
-   <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1134407820847087648/1138866870607425746/latest.png">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <style>
          body {
-         cursor: url('https://cdn.discordapp.com/attachments/1134407820847087648/1138866870607425746/latest.png'), auto;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         min-height: 100vh;
-         margin: 0;
-         background-color: #242424;
-         background-image: url('');
+            cursor: url('https://cdn.discordapp.com/attachments/1134407820847087648/1138866870607425746/latest.png'), auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #242424;
+            background-image: url('');
          }
          #magicButton {
-         padding: 10px 20px;
-         font-size: 16px;
-         border: none;
-         background-color: #3498db;
-         color: white;
-         cursor: pointer;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
          }
          #catContainer {
-         display: none;
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 100vw;
-         height: 100vh;
-         z-index: 9999;
-         transition: all 2s linear;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 9999;
+            transition: all 2s linear;
          }
          #catImage {
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%) scaleX(1);
-         width: 10%;
-         height: auto;
-         transition: transform 1s ease-in-out;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scaleX(1);
+            width: 10%;
+            height: auto;
+            transition: transform 1s ease-in-out;
          }
          #confettiCanvas {
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 100vw;
-         height: 100vh;
-         pointer-events: none;
-         z-index: 9998;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9998;
          }
          #tacoContainer {
-         display: none;
-         position: fixed;
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: 100%;
-         pointer-events: none;
-         z-index: 9997;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9997;
          }
          .tacoConfetti {
-         position: absolute;
-         width: 40px;
-         height: auto;
-         transform: translate(-50%, -50%);
-         animation: rotate 10s linear infinite, fadeIn 2s ease-in-out, fall linear 5s;
+            position: absolute;
+            width: 40px;
+            height: auto;
+            transform: translate(-50%, -50%);
+            animation: rotate 10s linear infinite, fadeIn 2s ease-in-out, fall linear 5s;
          }
          .cursorPersonalizado {
-         position: fixed;
-         pointer-events: none;
-         width: 100px;
-         height: 100px;
-         background-image: url('https://cdn.discordapp.com/attachments/1134407820847087648/1138866870607425746/latest.png');
-         background-size: cover;
-         z-index: 9999;
-         transform: translate(-50%, -50%); 
+            position: fixed;
+            pointer-events: none;
+            width: 100px;
+            height: 100px;
+            background-image: url('https://cdn.discordapp.com/attachments/1134407820847087648/1138866870607425746/latest.png');
+            background-size: cover;
+            z-index: 9999;
+            transform: translate(-50%, -50%); 
+         }
+         .discord-card {
+            background-color: #28292c;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-family: Arial, sans-serif; /* Altere para a fonte desejada */
+         }
+         .profile-picture {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+         }
+         .display-name {
+            font-size: 24px;
+            font-weight: bold;
+            font: italic;
+         }
+         .username {
+            font-size: 18px;
+            color: #b3bcdf;
+         }
+         .bio {
+            margin-top: 10px;
          }
          @keyframes rotate {
-         0% {
-         transform: translate(-50%, -50%) rotate(0deg);
-         }
-         100% {
-         transform: translate(-50%, -50%) rotate(360deg);
-         }
+            0% {
+               transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+               transform: translate(-50%, -50%) rotate(360deg);
+            }
          }
          @keyframes fadeIn {
-         0%, 100% {
-         opacity: 0;
-         }
-         50% {
-         opacity: 1;
-         }
+            0%, 100% {
+               opacity: 0;
+            }
+            50% {
+               opacity: 1;
+            }
          }
          @keyframes fall {
-         0% {
-         transform: translateY(-100%);
-         }
-         100% {
-         transform: translateY(100%);
-         }
+            0% {
+               transform: translateY(-100%);
+            }
+            100% {
+               transform: translateY(100%);
+            }
          }
       </style>
       <title>NSFW :3</title>
    </head>
    <body>
+      <div class="discord-card" id="discordCard">
+         <img class="profile-picture" src="https://cdn.discordapp.com/attachments/1134407820847087648/1138896300683821086/Captura_de_ecra_2023-08-09_023036.png" alt="Foto de Perfil">
+         <div class="display-name">Kay</div>
+         <div class="username">@_dekayy_</div>
+         <div class="bio">faço nada da vida, só jogo</div>
+      </div>
       <button id="magicButton">Ver packs do pé</button>
       <div id="catContainer">
          <img id="catImage" src="https://cdn.discordapp.com/attachments/1134407820847087648/1138863839555891341/Captura_de_ecra_2023-08-09_023036-removebg-preview.png" alt="Gato">
@@ -120,80 +159,74 @@
          const tacoContainer = document.getElementById("tacoContainer");
          const ctx = confettiCanvas.getContext("2d");
          const audio = new Audio("https://cdn.discordapp.com/attachments/1134407820847087648/1138865112153853972/Raining_Tacos-speed_up.mp3");
-         
+         const discordCard = document.getElementById("discordCard");
+
          magicButton.addEventListener("click", () => {
-         
-             const element = document.documentElement; 
-             function entrarFullscreen() {
-           if (element.requestFullscreen) {
-             element.requestFullscreen();
-           } else if (element.mozRequestFullScreen) { 
-             element.mozRequestFullScreen();
-           } else if (element.webkitRequestFullscreen) { 
-             element.webkitRequestFullscreen(); 
-           } else if (element.msRequestFullscreen) { 
-             element.msRequestFullscreen();
-           }
+            const newBackground = "https://i.gifer.com/Ws1r.gif";
+            document.body.style.backgroundImage = `url(${newBackground})`;
+
+            entrarFullscreen();
+
+            const cursorPersonalizado = document.createElement("div");
+            cursorPersonalizado.className = "cursorPersonalizado";
+            document.body.appendChild(cursorPersonalizado);
+
+            document.addEventListener("mousemove", (event) => {
+               cursorPersonalizado.style.left = `${event.clientX}px`;
+               cursorPersonalizado.style.top = `${event.clientY}px`;
+            });
+
+            document.addEventListener("mouseout", () => {
+               cursorPersonalizado.style.display = "none";
+            });
+
+            document.addEventListener("mouseover", () => {
+               cursorPersonalizado.style.display = "block";
+            });
+
+            tocarMusica();
+            discordCard.style.display = "none";
+            magicButton.style.display = "none";
+            catContainer.style.display = "block";
+            tacoContainer.style.display = "block";
+            catImage.style.width = "10%";
+            catContainer.style.opacity = "1";
+
+            let larguraAtual = 10;
+            const larguraAlvo = 100;
+            iniciarTacosMexendo();
+            const aumentarTamanho = () => {
+               if (larguraAtual < larguraAlvo) {
+                  larguraAtual += 1;
+                  catImage.style.width = larguraAtual + "%";
+                  requestAnimationFrame(aumentarTamanho);
+               } 
+            };
+            setTimeout(() => {
+               alternarOrientacaoDoGato();
+            }, 1000);
+
+            iniciarConfetti();
+            iniciarTacoConfetti();
+
+            aumentarTamanho();
+         });
+
+         function entrarFullscreen() {
+            const element = document.documentElement; 
+            if (element.requestFullscreen) {
+               element.requestFullscreen();
+            } else if (element.mozRequestFullScreen) { 
+               element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullscreen) { 
+               element.webkitRequestFullscreen(); 
+            } else if (element.msRequestFullscreen) { 
+               element.msRequestFullscreen();
+            }
          }
-         const body = document.body;
-         const newBackground = "https://i.gifer.com/Ws1r.gif";
-             body.style.backgroundImage = `url(${newBackground})`;
-         
-         entrarFullscreen();
-         
-         
-         const cursorPersonalizado = document.createElement("div");
-         cursorPersonalizado.className = "cursorPersonalizado";
-         document.body.appendChild(cursorPersonalizado);
-         
-         document.addEventListener("mousemove", (event) => {
-           cursorPersonalizado.style.left = `${event.clientX}px`;
-           cursorPersonalizado.style.top = `${event.clientY}px`;
-         });
-         
-         document.addEventListener("mouseout", () => {
-           cursorPersonalizado.style.display = "none";
-         });
-         
-         document.addEventListener("mouseover", () => {
-           cursorPersonalizado.style.display = "block";
-         });
-         
-           tocarMusica();
-           magicButton.style.display = "none";
-           catContainer.style.display = "block";
-           tacoContainer.style.display = "block";
-           catImage.style.width = "10%";
-           catContainer.style.opacity = "1";
-         
-         
-         
-         
-           let larguraAtual = 10;
-           const larguraAlvo = 100;
-           iniciarTacosMexendo();
-           const aumentarTamanho = () => {
-             if (larguraAtual < larguraAlvo) {
-               larguraAtual += 1;
-               catImage.style.width = larguraAtual + "%";
-               requestAnimationFrame(aumentarTamanho);
-             } 
-         
-           };
-           setTimeout(() => {
-                 alternarOrientacaoDoGato();
-               }, 1000);
-         
-               iniciarConfetti();
-               iniciarTacoConfetti();
-         
-           aumentarTamanho();
-         
-         
-         });
-         
+
          function iniciarTacosMexendo() {
-           const numeroTacos = 300;
+            const numeroTacos = 300;
          
            for (let i = 0; i < numeroTacos; i++) {
              const taco = document.createElement("img");
@@ -205,10 +238,9 @@
              document.body.appendChild(taco);
            }
          }
-         
-         
-             function iniciarConfetti() {
-               confettiCanvas.width = window.innerWidth;
+
+         function iniciarConfetti() {
+            confettiCanvas.width = window.innerWidth;
                confettiCanvas.height = window.innerHeight;
          
                const confettiColors = ["#706F4B", "#817F60", "#E8E5BF"];
@@ -248,31 +280,30 @@
                }
          
                desenharConfetti();
-             }
+         }
+
+         function tocarMusica() {
+            audio.loop = true;
+            audio.play();
+         }
+
+         function alternarOrientacaoDoGato() {
+            catImage.style.transform = `translate(-50%, -50%) scaleX(${catImage.style.transform === 'translate(-50%, -50%) scaleX(1)' ? -1 : 1})`;
+               setTimeout(alternarOrientacaoDoGato, 1000); 
+         }
+
+         function iniciarTacoConfetti() {
+            const numeroTacos = 50;
          
-             function tocarMusica() {
-               audio.loop = true;
-               audio.play();
-             }
-         
-             function alternarOrientacaoDoGato() {
-               catImage.style.transform = `translate(-50%, -50%) scaleX(${catImage.style.transform === 'translate(-50%, -50%) scaleX(1)' ? -1 : 1})`;
-               setTimeout(alternarOrientacaoDoGato, 1000); // Alterado para 1000ms (1 segundo)
-             }
-         
-             function iniciarTacoConfetti() {
-               const numeroTacos = 50;
-         
-               for (let i = 0; i < numeroTacos; i++) {
-                 const taco = document.createElement("img");
-                 taco.src = "https://cdn.discordapp.com/attachments/1134407820847087648/1138866870607425746/latest.png";
-                 taco.className = "tacoConfetti";
-                 taco.style.left = `${Math.random() * 100}vw`;
-                 taco.style.animationDuration = `${Math.random() * 2 + 4}s`;
-                 tacoContainer.appendChild(taco);
-               }
-             }
-           
+         for (let i = 0; i < numeroTacos; i++) {
+           const taco = document.createElement("img");
+           taco.src = "https://cdn.discordapp.com/attachments/1134407820847087648/1138866870607425746/latest.png";
+           taco.className = "tacoConfetti";
+           taco.style.left = `${Math.random() * 100}vw`;
+           taco.style.animationDuration = `${Math.random() * 2 + 4}s`;
+           tacoContainer.appendChild(taco);
+         }
+         }
       </script>
    </body>
 </html>
