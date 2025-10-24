@@ -1,4 +1,6 @@
 <?php
+// index.php - Arquivo principal
+
 // Configurações do site
 $siteTitle = "Kay's Space";
 $displayName = "Kay";
@@ -337,7 +339,6 @@ if (isset($_POST['click'])) {
             iniciarTacoConfetti();
             aumentarTamanho();
             
-            // Submeter o formulário
             setTimeout(() => {
                 document.getElementById("buttonForm").submit();
             }, 100);
