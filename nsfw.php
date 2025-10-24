@@ -1,5 +1,5 @@
 <?php
-// index.php - Arquivo principal
+// index.php - Arquivo principal do site Kay's Space
 
 // Configurações do site
 $siteTitle = "Kay's Space";
