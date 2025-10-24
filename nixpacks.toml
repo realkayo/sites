@@ -1,0 +1,16 @@
+[phases.setup]
+nixPkgs = ["php82", "nginx"]
+
+[phases.install]
+cmds = ["composer install --no-dev --optimize-autoloader"]
+
+[start]
+cmd = "php -S 0.0.0.0:$PORT -t ."
+```
+
+## **Estrutura final do projeto:**
+```
+seu-projeto/
+├── index.php          (código do artifact)
+├── composer.json      (configuração PHP)
+└── nixpacks.toml      (configuração do deploy)
