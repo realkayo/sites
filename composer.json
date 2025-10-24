@@ -1,0 +1,8 @@
+{
+    "name": "kay/nsfw-site",
+    "description": "Kay's Interactive Site",
+    "type": "project",
+    "require": {
+        "php": "^8.0"
+    }
+}
